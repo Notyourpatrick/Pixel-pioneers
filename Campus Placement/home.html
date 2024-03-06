@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Placement</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Campus Placement</h1>
+  </header>
+
+  <section class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="company1-logo.jpg" alt="Company 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="company2-logo.jpg" alt="Company 2">
+    </div>
+
+    <!-- Add more slides as needed -->
+
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+  </section>
+
+  <script>
+    let slideIndex = 1;
+    
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    setInterval(() => {
+      plusSlides(1);
+    }, 3000); // Change slide every 3 seconds
+  </script>
+
+</body>
+</html>
